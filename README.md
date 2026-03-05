@@ -71,3 +71,6 @@ A standalone GUI editor for **FINAL FANTASY TACTICS: The Ivalice Chronicles** (2
 
 ### Built With
 - **[Claude Code](https://claude.ai/claude-code)** by Anthropic — AI-assisted development
+
+### Special Thanks
+- **NinGeoWeazeleff** — Testing and feedback
