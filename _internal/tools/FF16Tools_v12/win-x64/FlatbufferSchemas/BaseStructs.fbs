@@ -1,0 +1,46 @@
+// all FlatSharp FBS attributes start with the 'fs_' prefix.
+attribute "fs_serializer";
+
+namespace FF16Tools.Files.FlatBuffers;
+
+struct Vec2 {
+	x:float;
+	y:float;
+}
+
+struct Vec3 {
+  x:float;
+  y:float;
+  z:float;
+}
+
+struct Vec4 {
+  x:float;
+  y:float;
+  z:float;
+  w:float;
+}
+
+struct Unk10F
+{
+	values:[float:10];
+}
+
+table UnkSharedIKBTable
+{
+	field_1:short; // enum, 0-5
+	field_2:uint;
+}
+
+table UnkSharedIKBTable2
+{
+    field_1:bool = true;
+    field_2:float;
+    field_3:UnkSharedIKBTable;
+    field_4:UnkSharedIKBTable;
+}
+
+table LipsyncSharedKey
+{
+	field_1:uint;
+}
