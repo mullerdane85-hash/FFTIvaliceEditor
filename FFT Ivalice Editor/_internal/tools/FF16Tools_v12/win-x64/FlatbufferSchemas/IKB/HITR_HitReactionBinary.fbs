@@ -1,0 +1,139 @@
+﻿include "../BaseStructs.fbs";
+
+// all FlatSharp FBS attributes start with the 'fs_' prefix.
+attribute "fs_serializer";
+
+namespace FF16Tools.Files.FlatBuffers.IKB;
+
+table HitBUnkSharedTableSub
+{
+    field_1:float;
+    field_2:float;
+    field_3:float;
+}
+
+table HitBUnkSharedTable
+{
+    field_1:short; // enum
+    field_2:HitBUnkSharedTableSub;
+}
+
+table HitBSharedStruct2
+{
+    field_1:float;
+    field_2:float;
+    field_3:bool;
+    field_4:short = 3; // enum, default 3
+}
+
+table HitBUnionStruct1
+{
+    field_1:HitBUnkSharedTable;
+    field_2:bool;
+    field_3:float = 1.0;
+}
+
+table HitBUnionStruct2
+{
+    field_1:HitBUnkSharedTable;
+    field_2:HitBUnkSharedTable;
+}
+
+table HitBUnionStruct3
+{
+    field_1:HitBUnkSharedTable;
+    field_2:bool;
+}
+
+union HitBUnkUnionStruct { HitBUnionStruct1, HitBUnionStruct2, HitBUnionStruct3 }
+
+table HitBTable3_F10
+{
+    field_1:short; // enum
+    field_2:short;
+    field_3:HitBUnkUnionStruct;
+    field_4:bool;
+    field_5:bool;
+    field_6:float;
+    field_7:float;
+    field_8:HitBSharedStruct2;
+    field_9:HitBSharedStruct2;
+    field_10:bool = true;
+    field_11:[int];
+    field_12:string;
+}
+
+table HitBTable3_F11
+{
+    unk_joint_1:uint; // fnv hash
+    unk_joint_2:uint; // fnv hash
+}
+
+table HitBTable3
+{
+    unk_joint_1:uint; // fnv hash
+    unk_joint_2:uint; // fnv hash
+    unk_3:byte;
+    unk_4:byte;
+    unk_5:byte;
+    unk_6:byte;
+    unk_7:byte;
+    unk_8:byte;
+    unk_9:byte;
+    field_10:[HitBTable3_F10];
+    field_11:[HitBTable3_F11];
+}
+
+table HitBTable4_F2
+{
+    field_1:short;
+    field_2:int; // unsure
+}
+
+table HitBTable4
+{
+    field_1:short;
+    field_2:HitBTable4_F2;
+    field_3:float;
+    field_4:float;
+    field_5:[Vec2];
+    field_6:HitBSharedStruct2;
+    field_7:HitBSharedStruct2;
+    field_8:string;
+}
+
+table HitBTable6
+{
+    field_1:bool;
+    field_2:short;
+}
+
+table HitBTable7_F1
+{
+    field_1:uint; // fnv hash
+    field_2:uint; // fnv hash
+    field_3:HitBSharedStruct2;
+}
+
+table HitBTable7
+{
+    field_1:[HitBTable7_F1];
+    field_2:bool;
+    field_3:bool = true;
+}
+
+table HitReactionBinary (fs_serializer)
+{
+    field_1:short;
+    field_2:uint; // Size in kb to allocate somehow. 1 unit = 1kb, defaults to 0x6000 and minimum 0x6000
+    field_3:[HitBTable3];
+    field_4:[HitBTable4];
+    field_5:bool;
+    field_6:HitBTable6;
+    field_7:[HitBTable7];
+    field_8:UnkSharedIKBTable2;
+}
+
+file_extension "ikb";
+file_identifier "HITR";
+root_type HitReactionBinary;
