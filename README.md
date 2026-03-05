@@ -1,4 +1,4 @@
-# FFT Ivalice Editor v2.3.0
+# FFT Ivalice Editor v2.5.0
 
 A standalone GUI editor for **FINAL FANTASY TACTICS: The Ivalice Chronicles** (2025 Steam remaster, Enhanced version).
 
@@ -56,6 +56,18 @@ A standalone GUI editor for **FINAL FANTASY TACTICS: The Ivalice Chronicles** (2
 - **Difficulty data** → edited in NXD DifficultyLevel table → packed into `modded.pac`
 - Both types of changes persist permanently across all saves and new games
 
-## Credits
-- FF16Tools.CLI v1.12.0 by Nenkai
-- Built with Python + PySide6
+## Credits & Acknowledgments
+
+### Tools
+- **[FF16Tools.CLI v1.12.0](https://github.com/Nenkai/FF16Tools)** by Nenkai — NXD/PAC extraction, SQLite conversion, save file unpacking/packing
+- **[FFTPatcher](https://github.com/Glain/FFTPatcher)** by Glain — WotL ability default data (Abilities.bin) used for the Ability Combat tab reference values
+- **[FFHacktics](https://ffhacktics.com/)** community — Formula reference data, ability/job research, and modding documentation
+
+### Libraries
+- **[Python](https://www.python.org/)** 3.14 — Runtime
+- **[PySide6](https://doc.qt.io/qtforpython-6/)** (Qt for Python) — GUI framework
+- **[Pillow (PIL)](https://pillow.readthedocs.io/)** — Portrait image processing (DDS → PNG conversion)
+- **[PyInstaller](https://pyinstaller.org/)** — Executable packaging
+
+### Built With
+- **[Claude Code](https://claude.ai/claude-code)** by Anthropic — AI-assisted development
