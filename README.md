@@ -24,7 +24,7 @@ A standalone GUI editor for **FINAL FANTASY TACTICS: The Ivalice Chronicles** (2
 
 ### Raw Data Tabs (NXD/SQLite)
 - **Abilities**: Names, descriptions, JP costs, icons
-- **Ability Combat**: Range, area, element, formula, X/Y, CT, MP overrides
+- **Ability Parameters**: Range, area, element, formula, X/Y, CT, MP overrides
 - **Items**: Names, descriptions, categories
 - **Job Unlock Requirements**: Required jobs and levels
 - **Encounters**: Unit jobs, equipment, abilities per encounter
@@ -60,7 +60,7 @@ A standalone GUI editor for **FINAL FANTASY TACTICS: The Ivalice Chronicles** (2
 
 ### Tools
 - **[FF16Tools.CLI v1.12.0](https://github.com/Nenkai/FF16Tools)** by Nenkai — NXD/PAC extraction, SQLite conversion, save file unpacking/packing
-- **[FFTPatcher](https://github.com/Glain/FFTPatcher)** by Glain — WotL ability default data (Abilities.bin) used for the Ability Combat tab reference values
+- **[FFTPatcher](https://github.com/Glain/FFTPatcher)** by Glain — WotL ability default data (Abilities.bin) used for the Ability Parameters tab reference values
 - **[FFHacktics](https://ffhacktics.com/)** community — Formula reference data, ability/job research, and modding documentation
 
 ### Libraries
